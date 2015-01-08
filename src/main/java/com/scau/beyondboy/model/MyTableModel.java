@@ -46,8 +46,7 @@ public class MyTableModel extends DefaultTableModel
 	//设定只有成绩那一列才能编辑
 	@Override
 	public boolean isCellEditable(int row, int column)
-	{
-		
+	{		
 		return column==2;
 	}
 	//实现表格模型的内部监听
