@@ -65,7 +65,7 @@ public class SecondPane  extends JFrame
 		imageJPanel.setLayout(new BorderLayout());
 		jPanel1.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));		
 		jPanel1.add(courseJLabel);
-		jPanel1.setBackground(Color.LIGHT_GRAY);
+		jPanel1.setBackground(Color.DARK_GRAY);
 		setComBox();
 		courseBox.setSize(100,courseJLabel.getHeight());
 		jPanel1.add(courseBox);
@@ -74,7 +74,7 @@ public class SecondPane  extends JFrame
 		jPanel2.add(classJButton);
 		jPanel2.add(saveJButton);
 		jPanel2.add(exitJButton);
-		jPanel2.setBackground(Color.LIGHT_GRAY);
+		jPanel2.setBackground(Color.DARK_GRAY);
 		imageJPanel.add(jPanel1,BorderLayout.NORTH);
 		imageJPanel.add(new JScrollPane(jTable));
 		imageJPanel.add(jPanel2,BorderLayout.SOUTH);
@@ -99,6 +99,8 @@ public class SecondPane  extends JFrame
 			{
 				try
 				{
+					if(jTable.isEditing())
+						jTable.getCellEditor().stopCellEditing();
 					ObjectOutputStream out=new ObjectOutputStream(new FileOutputStream(new File(new File(PATH3).getAbsolutePath(),model.getClassName()+"-"+courseName+".dat")));
 					out.writeObject(model.getDataVector());
 					out.writeObject(getColumnNames());

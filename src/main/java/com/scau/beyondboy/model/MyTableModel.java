@@ -21,7 +21,12 @@ public class MyTableModel extends DefaultTableModel
 	{
 		this.className = className;
 	}
-	private int i=0;	
+	private int i=0;
+	public MyTableModel()
+	{
+		super();
+		addTableModelListener(new MyTableModelListener());
+	}
 	public MyTableModel(Object[][] data,Object[] columnNames)
 	{
 		super(data, columnNames);
