@@ -41,7 +41,7 @@ public class ThirdPane extends JFrame
 	public ThirdPane()
 	{
 		Init();
-		this.setTitle("输入学生成绩");
+		this.setTitle("查看学生成绩");
 		this.setSize(600, 600);
 		this.setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
